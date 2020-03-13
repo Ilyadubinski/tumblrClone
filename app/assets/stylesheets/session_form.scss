@@ -1,0 +1,179 @@
+.session-submit {
+    background-color: #00c3ff;
+    color: black;
+    font-weight: bold;
+    border-radius: 3px;
+    border: none;
+    /* width: 300px; */
+    height: 45px;
+    padding: 8px 0px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /*  */
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.session-submit {
+   
+  
+
+     
+    
+   
+    border-radius: 3px;
+    border: none;
+    /* width: 300px; */
+    height: 45px;
+    padding: 8px 0px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /*  */
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.guest-login {
+
+     
+   background-color: #00c3ff;
+    color: black;
+    font-weight: bold;
+    border-radius: 3px;
+    border: none;
+    /* width: 300px; */
+    height: 45px;
+    padding: 8px 0px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /*  */
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+
+}
+
+.username-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -40px;
+    font-size: 16px;
+    opacity: 0.8;
+    transition: 300ms ease;
+
+}
+.password-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -29px;
+    font-size: 16px;
+    opacity: 0.8;
+    transition: 300ms ease;
+    padding: 10px;
+}
+
+.email-box {
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 24px; */
+    font-size: 16px;
+    opacity: 0.8;
+    transition: 300ms ease;
+    padding: 40px;
+    margin-top: -51px;
+}
+
+.error-message {
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 24px; */
+    font-size: 16px;
+    opacity: 0.8;
+    transition: 300ms ease;
+    color: red; 
+}
+
+/* .username-box {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: -internal-light-dark-color(white, black);
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+} */
+
+.username-box {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    /* display: inline-block;
+    text-align: start; */
+    -webkit-appearance: textfield;
+    background-color: -internal-light-dark-color(white, black);
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    /* margin: 0em; */
+    /* font: 400 11px system-ui; */
+    /* padding: 1px; */
+    /* border-width: 2px; */
+    /* border-style: inset;
+    border-color: initial;
+    border-image: initial; */
+}
+
+.login-input-username {
+    line-height: 35px;
+    
+
+}
+
+.login-input-password {
+    line-height: 35px;
+}
+
+.login-input-email {
+    line-height: 35px ;
+   
+}
+
+.guest-login {
+    background-color: #00c3ff;
+    color: whitesmoke;
+    border-radius: 3px;
+    border: none;
+    /* width: 300px; */
+    height: 45px;
+    padding: 8px 0px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /*  */
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-weight: bold;
+    margin-top: -60px;
+}

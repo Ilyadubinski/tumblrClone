@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wander</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+    <script type="text/javascript">
+    window.wantedurl = "<%= image_url('wanted.jpg') %>";
+  </script>
+  <script type="text/javascript">
+    window.rossurl = "<%= image_url('ross.jpg') %>";
+  </script>
+  <body>
+    <%= yield %>
+  </body>
+</html>

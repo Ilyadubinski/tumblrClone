@@ -55,9 +55,9 @@ const mdp = (dispatch) => ({
 });
 ```
 
-It was a purposeful design choice to limit restrictions on posting.
+It was a purposeful design choice to limit restrictions on posting
 
-Methods to create posts including animations were added to facilitate user experience.
+Methods to create posts including animations were added to facilitate user experience
 
 
 
@@ -70,11 +70,15 @@ Front-End: React/Redux
 
 Back-End: Rails/PostgresSQL
 
-Media Content is stored on AWS S3
+Media Content is stored locally
 
 ---
 **Todos**
 
-implement the 'like','follow', and 'tag' functionality that has already been built out in the backend. 
-Create and implement a reply feature that allows users to leave replies on each others dreams.
-Create individual pages that the user can branche out to. 
+implement the 'like','follow', and 'tag' functionality that has already been built out in the backend
+
+Create and implement a reply feature that allows users to leave replies on each others dreams
+
+Create individual pages that the user can branche out to 
+
+Implement AWS S3 to store media content

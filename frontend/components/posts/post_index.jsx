@@ -128,7 +128,7 @@ class PostIndex extends React.Component {
                                 id="75"
                             />
                             <div className='blog-2-title-descriction'>
-                                <div className='blog-2-title'>ScribblesOnTheStallWall</div>
+                                <div className='blog-2-title'>ScribblesOnTheWall</div>
                                 <div className='blog-2-description'>Only silly geese fly south</div>
                             </div>
                             <FontAwesomeIcon icon={faPlusSquare} />
@@ -153,8 +153,8 @@ class PostIndex extends React.Component {
                                 id="75"
                         />
                             <div className='blog-2-title-descriction'>
-                                <div className='blog-2-title'>RossPayForLessClothingStore</div>
-                                <div className='blog-2-description'>Pay Less. Get Less.</div>
+                                <div className='blog-2-title'>TheOfficialPepsiBestie</div>
+                                <div className='blog-2-description'>Same Same but Different</div>
                             </div>
                             <FontAwesomeIcon icon={faPlusSquare} />
                         </div>

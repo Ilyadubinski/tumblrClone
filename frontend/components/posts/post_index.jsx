@@ -68,7 +68,7 @@ class PostIndex extends React.Component {
                     <div className='right-column'>
                         <h4 className='recommended-blogs-title'>Recommended Blogs</h4>
                         <div className='blog-2'> 
-                            <img class="blog-avatar"
+                            <img className="blog-avatar"
                                 src="https://img.icons8.com/color/48/000000/avatar.png"
                             id="75"
                         />
@@ -84,7 +84,7 @@ class PostIndex extends React.Component {
                             <FontAwesomeIcon icon={faPlusSquare}/>
                         </div>
                         <div className='blog-2'>
-                            <img class="blog-avatar"
+                            <img className="blog-avatar"
                                 src="https://img.icons8.com/color/16/000000/beyoncé.png"
                                 id="75"
                     />
@@ -99,7 +99,7 @@ class PostIndex extends React.Component {
                             <FontAwesomeIcon icon={faPlusSquare} />
                         </div>
                         <div className='blog-2'>
-                            <img class="blog-avatar"
+                            <img className="blog-avatar"
                                 src="https://img.icons8.com/plasticine/100/000000/chuck-norris.png"
                                 id="75"
                         />
@@ -111,7 +111,7 @@ class PostIndex extends React.Component {
                             <FontAwesomeIcon icon={faPlusSquare} />
                         </div>
                         <div className='blog-2'>
-                            <img class="blog-avatar"
+                            <img className="blog-avatar"
                                 src="https://img.icons8.com/cute-clipart/64/000000/frida-kahlo.png"
                                 id="75"
                         />
@@ -123,7 +123,7 @@ class PostIndex extends React.Component {
                         </div>
                         <h4 className='radar-title'>Radar</h4>
                         <div className='blog-2'>
-                            <img class="blog-avatar"
+                            <img className="blog-avatar"
                                 src="https://dreamr-app.herokuapp.com/assets/cloud_avatar-35871f205f34d3ba755f43a0618a7ed8e732e01458082ddbf5d7b959534a59de.png"
                                 id="75"
                             />
@@ -148,7 +148,7 @@ class PostIndex extends React.Component {
                         </div>
                         <h4 className='radar-title'>Sponsored</h4>
                         <div className='blog-2'>
-                            <img class="blog-avatar"
+                            <img className="blog-avatar"
                                 src="https://dreamr-app.herokuapp.com/assets/cloud_avatar-35871f205f34d3ba755f43a0618a7ed8e732e01458082ddbf5d7b959534a59de.png"
                                 id="75"
                         />

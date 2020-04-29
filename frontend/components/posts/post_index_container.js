@@ -19,11 +19,15 @@ const msp = (state) => {
 };
 
 const mdp = (dispatch) => ({
-    fetchAllPosts: () => dispatch(fetchAllPosts()),
-    openTextPostForm: () => dispatch(openModal('text-post-form')),
-    likePost: (postId) => dispatch(likePost(postId)),
-    unlikePost: (postId) => dispatch(unlikePost(postId)),
-    logout: () => dispatch(logout())
+  fetchAllPosts: () => dispatch(fetchAllPosts()),
+  openTextPostForm: () => dispatch(openModal("text-post-form")),
+  openQuotePostForm: () => dispatch(openModal("quote-post-form")),
+  openImagePostForm: () => dispatch(openModal("image-post-form")),
+  openVideoPostForm: () => dispatch(openModal("video-post-form")),
+  openAudioPostForm: () => dispatch(openModal("audio-post-form")),
+  likePost: (postId) => dispatch(likePost(postId)),
+  unlikePost: (postId) => dispatch(unlikePost(postId)),
+  logout: () => dispatch(logout()),
 });
 
 export default connect(msp, mdp)(PostIndex);

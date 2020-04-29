@@ -6,7 +6,10 @@ import {
 
 
 class PostIndexItem extends React.Component {
-
+    
+    constructor(props) {
+        super(props)
+    }
     // constructor(props) {
     //     super(props);
     //     this.state = ({
@@ -39,42 +42,37 @@ class PostIndexItem extends React.Component {
     //     }
     // }
 
+    
+
     render() {
+       
         return (
-        <div className='post-container'>
-                <div className='avatar'>
-                    <img className="avatar"
-                    src="httpss://img.icons8.com/bubbles/50/000000/freddie-mercury.png"
-                    id="75"
-            />
-                </div> 
-            <div className='post-box'>
-                <div className='post-top'>
-                    demo-user
-                </div>
-
-                <div className='post-title'>
-                {this.props.post.title}
-                </div>
-
-                <div className='post-text'>
-                {this.props.post.text}
-                </div>
-
-                <div className='post-bottom'>
-                        <FontAwesomeIcon icon={faComment} id='post-icon' />
-                        <FontAwesomeIcon icon={faRetweet} id='retweet-icon' />
-                        <FontAwesomeIcon icon={faCog} id='post-icon' />
-                        {/* <button
-                            className={likedPost}
-                            onClick={this.toggleLike}>like</button> */}
-                        
-                </div>
-
+          <div className="post-container">
+            <div className="avatar">
+              <img
+                className="avatar"
+                src="httpss://img.icons8.com/bubbles/50/000000/freddie-mercury.png"
+                id="75"
+              />
             </div>
-        </div>
+            <div className="post-box">
+              <div className="post-top">demo-user</div>
 
-        )
+              <div className="post-title">{this.props.post.title}</div>
+
+              <div className="post-text">{this.props.post.text}</div>
+
+              <div className="post-bottom">
+                <FontAwesomeIcon icon={faComment} id="post-icon" />
+                <FontAwesomeIcon icon={faRetweet} id="retweet-icon" />
+                <FontAwesomeIcon icon={faCog} id="post-icon" />
+                <div className="heart">
+                  ❤
+                </div>
+              </div>
+            </div>
+          </div>
+        );
     }
 }
 

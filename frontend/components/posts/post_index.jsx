@@ -43,19 +43,19 @@ class PostIndex extends React.Component {
                                 <span>Text</span>
                             </div>
                             <div className='create-photo-post-button'>
-                                <button className='photo-button' onClick={this.props.openTextPostForm}><FontAwesomeIcon icon={faCamera} id='camera-icon' /></button>
+                                <button className='photo-button' onClick={this.props.openImagePostForm}><FontAwesomeIcon icon={faCamera} id='camera-icon' /></button>
                                 <span>Photo</span>
                             </div>
                             <div className='create-quote-post-button'>
-                                <button className='quote-button' onClick={this.props.openTextPostForm}><FontAwesomeIcon icon={faQuoteLeft} id='quote-icon' /></button>
+                                <button className='quote-button' onClick={this.props.openQuotePostForm}><FontAwesomeIcon icon={faQuoteLeft} id='quote-icon' /></button>
                                 <span>Quote</span>
                             </div>
                             <div className='create-audio-post-button'>
-                                <button className='audio-button' onClick={this.props.openTextPostForm}><FontAwesomeIcon icon={faHeadphones} id='headphones-icon' /></button>
+                                <button className='audio-button' onClick={this.props.openAudioPostForm}><FontAwesomeIcon icon={faHeadphones} id='headphones-icon' /></button>
                                 <span>Audio</span>
                             </div>
                             <div className='create-video-post-button'>
-                                <button className='video-button' onClick={this.props.openTextPostForm}><FontAwesomeIcon icon={faVideo} id='video-icon' /></button>
+                                <button className='video-button' onClick={this.props.openVideoPostForm}><FontAwesomeIcon icon={faVideo} id='video-icon' /></button>
                                 <span>Video</span>
                             </div>
                         </div>

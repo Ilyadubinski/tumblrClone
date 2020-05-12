@@ -26,3 +26,5 @@ config/initializers/secret_token.rb
 .DS_Store
 npm-debug.log
 /yarn-error.log/public/assets
+# Ignore master key for decrypting credentials and more.
+/config/master.key

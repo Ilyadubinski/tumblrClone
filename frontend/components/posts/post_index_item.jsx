@@ -9,6 +9,7 @@ class PostIndexItem extends React.Component {
     
     constructor(props) {
         super(props)
+        
     }
     // constructor(props) {
     //     super(props);
@@ -21,8 +22,8 @@ class PostIndexItem extends React.Component {
     // }
 
     // componentDidMount() {
-    //     if (!this.props.author)
-    //         this.props.fetchUser(this.props.authorId);
+    
+    //         this.props.fetchSinglePost(this.props.postId);
     // }
 
     // componentDidUpdate(prevState) {
@@ -45,7 +46,7 @@ class PostIndexItem extends React.Component {
     
 
     render() {
-       
+      //  debugger 
         return (
           <div className="post-container">
             <div className="avatar">
@@ -59,6 +60,8 @@ class PostIndexItem extends React.Component {
               <div className="post-top">demo-user</div>
 
               <div className="post-title">{this.props.post.title}</div>
+
+              <div><img src={this.props.post.photoURL} width="99%"></img></div>
 
               <div className="post-text">{this.props.post.text}</div>
 

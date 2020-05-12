@@ -9,14 +9,13 @@ class ImagePostForm extends React.Component {
     debugger;
     super(props);
     this.state = {
-      title: "",
-      text: "",
-      content_url: "",
-      tags: "",
+      photoFile: null,
+      photoUrl: null,
       user_id: this.props.CurrentUser.id,
       post_type: "quote",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   update(field) {
@@ -32,6 +31,12 @@ class ImagePostForm extends React.Component {
     const post = Object.assign({}, this.state);
     this.props.createPost(post);
   }
+
+  handleFile(e) {
+   debugger
+  }
+
+  
   render() {
     return (
       // <div className='text-post-form'>
@@ -50,11 +55,10 @@ class ImagePostForm extends React.Component {
           <div className="new-post-text">
             <input
               className="text-input"
-              type="text"
+              type="file"
               placeholder=" Upload Image Here "
-              size="60"
-              value={this.state.text}
-              onChange={this.update("text")}
+              // value={this.state.text}
+              onChange={this.handleFile.bind(this)}
             />
           </div>
           <div className="new-post-bottom">

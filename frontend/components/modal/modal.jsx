@@ -7,6 +7,20 @@ import ImagePostFormContainer from "../posts/image_post_form_container";
 import VideoPostFormContainer from "../posts/video_post_form_container";
 import AudioPostFormContainer from "../posts/audio_post_form_container";
 
+import BlogOneFormContainer from "../blogs/blog_one_form";
+
+import BlogTwoFormContainer from "../blogs/blog_two_form";
+
+import BlogThreeFormContainer from "../blogs/blog_three_form";
+
+import BlogFourFormContainer from "../blogs/blog_four_form";
+
+import BlogFiveFormContainer from "../blogs/blog_five_form";
+
+import BlogSixFormContainer from "../blogs/blog_six_form";
+
+import BlogSevenFormContainer from "../blogs/blog_seven_form";
+
 function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
@@ -27,6 +41,27 @@ function Modal({ modal, closeModal }) {
         break;
       case "audio-post-form":
         component = <AudioPostFormContainer />;
+        break
+      case "blog-one-form":
+        component = <BlogOneFormContainer />;
+        break;
+      case "blog-two-form":
+        component = <BlogTwoFormContainer />;
+        break;
+      case "blog-three-form":
+        component = <BlogThreeFormContainer />;
+        break;
+      case "blog-four-form":
+        component = <BlogFourFormContainer />;
+        break;
+      case "blog-five-form":
+        component = <BlogFiveFormContainer />;
+        break;
+      case "blog-six-form":
+        component = <BlogSixFormContainer />;
+        break;
+      case "blog-seven-form":
+        component = <BlogSevenFormContainer />;
         break;
       default:
         return null;

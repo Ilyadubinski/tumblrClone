@@ -11,6 +11,11 @@ import {
 
 
 class NavigationBar extends React.Component {
+   
+    search(string) {
+    window.find(string);
+    }
+
     render() {
         let rightNavButtons = (<nav className="nav-bar-login-signup-button">
             <ul>
@@ -50,6 +55,7 @@ class NavigationBar extends React.Component {
                             
                         </input>
                         <input
+                            // onClick={search(document.getElementById('search').value)}
                             type="submit"
                             className="hidden"
                             value="submit">

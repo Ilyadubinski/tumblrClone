@@ -2,10 +2,13 @@ import { connect } from "react-redux";
 import React from "react";
 import { createPost } from "../../actions/post_actions";
 import { closeModal } from "../../actions/modal_actions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPhotoVideo
+} from "@fortawesome/free-solid-svg-icons";
 
 class VideoPostForm extends React.Component {
   constructor(props) {
-    debugger;
     super(props);
     this.state = {
       title: "",
@@ -13,7 +16,7 @@ class VideoPostForm extends React.Component {
       content_url: "",
       tags: "",
       user_id: this.props.CurrentUser.id,
-      post_type: "quote",
+      post_type: "video",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -34,38 +37,44 @@ class VideoPostForm extends React.Component {
   render() {
     return (
       // <div className='text-post-form'>
-      <div>
-        <form onSubmit={this.handleSubmit} className="new-post-container">
-          <div className="new-post-title">
-            <input
-              className="title-input"
-              type="text"
-              placeholder="Video Title"
-              size="60"
-              value={this.state.title}
-              onChange={this.update("title")}
-            />
+      <form onSubmit={this.handleSubmit} className="new-post-container">
+        <div className="new-post-title">
+          <input
+            className="title-input"
+            type="text"
+            placeholder="Title"
+            size="60"
+            value={this.state.title}
+            onChange={this.update("title")}
+          />
+        </div>
+        <div>
+          <input className="upload"
+            type="file"
+            name="file"
+            id="file"
+            onChange={this.handleFile}
+          />
+          <label htmlFor="file">
+            <div className="upload-file">
+              <p> <FontAwesomeIcon icon={faPhotoVideo} className='camera-icon' /></p>
+              <p>Upload video</p>
+              {/* <p><i className="far fa-laugh-squint"></i></p> */}
+            </div>
+          </label>
+          <textarea className="content-tag"
+            type="text"
+            value={this.state.content}
+            onChange={this.update("text")}
+            placeholder="Add a caption, if you like"
+          />
+          <div className="post-form-footer">
+            <button onClick={this.props.closeModal} className="close-modal">Close</button>
+            <input className="submit-post" type="submit" value={this.props.post_type} />
           </div>
-          <div className="new-post-text">
-            <input
-              className="text-input"
-              type="text"
-              placeholder=" 'Video goes here' "
-              size="60"
-              value={this.state.text}
-              onChange={this.update("text")}
-            />
-          </div>
-          <div className="new-post-bottom">
-            <button type="submit" className="post-button">
-              Post
-            </button>
-          </div>
-          {/* <div className='post-bottom'> */}
-          {/* 
-                        </div> */}
-        </form>
-      </div>
+
+        </div>
+      </form>
 
       // </div>
     );
@@ -79,7 +88,7 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
   createPost: (post) => dispatch(createPost(post)),
-  closeModalForm: () => dispatch(closeModal()),
+  closeModal: () => dispatch(closeModal()),
 });
 
 export default connect(mSTP, mDTP)(VideoPostForm);

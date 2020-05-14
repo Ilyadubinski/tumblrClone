@@ -5,7 +5,7 @@ import { closeModal } from "../../actions/modal_actions";
 
 class QuotePostForm extends React.Component {
   constructor(props) {
-      debugger 
+ 
     super(props);
     this.state = {
       title: "",
@@ -33,39 +33,32 @@ class QuotePostForm extends React.Component {
   }
   render() {
     return (
-      // <div className='text-post-form'>
-      <div>
-        <form onSubmit={this.handleSubmit} className="new-post-container">
-          <div className="new-post-title">
-            <input
-              className="title-input"
-              type="text"
-              placeholder="Author"
-              size="60"
-              value={this.state.title}
-              onChange={this.update("title")}
-            />
+      <form onSubmit={this.handleSubmit} className="new-post-container">
+        <div className="new-post-title">
+          <input
+            className="title-input"
+            type="text"
+            placeholder="Source"
+            size="60"
+            value={this.state.title}
+            onChange={this.update("title")}
+          />
+        </div>
+        <div>
+
+          <textarea className="content-quote"
+            type="text"
+            value={this.state.text}
+            onChange={this.update("text")}
+            placeholder=' "Quote goes here" '
+          />
+          <div className="post-form-footer">
+            <button onClick={this.props.closeModal} className="close-modal">Close</button>
+            <input className="submit-post" type="submit" value={this.props.post_type} />
           </div>
-          <div className="new-post-text">
-            <input
-              className="text-input"
-              type="text"
-              placeholder= " 'Quote goes here' "
-              size="60"
-              value={this.state.text}
-              onChange={this.update("text")}
-            />
-          </div>
-          <div className="new-post-bottom">
-            <button type="submit" className="post-button">
-              Post
-            </button>
-          </div>
-          {/* <div className='post-bottom'> */}
-          {/* 
-                        </div> */}
-        </form>
-      </div>
+
+        </div>
+      </form>
 
       // </div>
     );
@@ -79,7 +72,7 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
   createPost: (post) => dispatch(createPost(post)),
-  closeModalForm: () => dispatch(closeModal()),
+  closeModal: () => dispatch(closeModal()),
 });
 
 export default connect(mSTP, mDTP)(QuotePostForm);

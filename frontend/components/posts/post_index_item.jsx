@@ -9,17 +9,11 @@ class PostIndexItem extends React.Component {
     
     constructor(props) {
         super(props)
-        
+        this.state = {
+          liked : false
+        }
     }
-    // constructor(props) {
-    //     super(props);
-    //     this.state = ({
-    //         author: null || this.props.author,
-    //         liked: false || this.props.liked,
 
-    //     })
-    //     this.toggleLike = this.toggleLike.bind(this);
-    // }
 
     // componentDidMount() {
     
@@ -33,31 +27,45 @@ class PostIndexItem extends React.Component {
     //     }
     // }
 
-    // toggleLike() {
-    //     const post = this.props.post;
+    toggleLike(e) {
+        const post = this.props.post;
+        // debugger 
+        const heart = e.target
 
-    //     if (this.state.liked) {
-    //         this.props.unlikePost(post.id);
-    //     } else {
-    //         this.props.likePost(post.id);
-    //     }
-    // }
+        if (this.state.liked) {
+            this.props.unlikePost(post.id)
+            // .then(() => {
+              this.setState({ liked: false });
+              heart.classList.remove('heart-liked')
+              heart.classList.add("heart")
+            // })
+        } else {
+            this.props.likePost(post.id)
+            // .then(() => { 
+              this.setState( { liked: true });
+              heart.classList.remove('heart')
+              heart.classList.add("heart-liked")
+            // })
+        }
+    }
 
     
 
     render() {
+      // console.log(this.props)
       //  debugger 
         return (
           <div className="post-container">
-            <div className="avatar">
+            <div className="avatar" onClick={this.props.openblogSeven}>
               <img
                 className="avatar"
                 src="httpss://img.icons8.com/bubbles/50/000000/freddie-mercury.png"
                 id="75"
+                onClick={this.props.openblogSeven}
               />
             </div>
             <div className="post-box">
-              <div className="post-top">demo-user</div>
+              <div className="post-top" onClick={this.props.openblogSeven}>demo-user</div>
 
               <div className="post-title">{this.props.post.title}</div>
 
@@ -69,7 +77,7 @@ class PostIndexItem extends React.Component {
                 <FontAwesomeIcon icon={faComment} id="post-icon" />
                 <FontAwesomeIcon icon={faRetweet} id="retweet-icon" />
                 <FontAwesomeIcon icon={faCog} id="post-icon" />
-                <div className="heart">
+                <div className="heart" onClick={(e) => this.toggleLike(e) } id='heart-div'>
                   ❤
                 </div>
               </div>

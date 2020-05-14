@@ -2,6 +2,10 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { createPost } from '../../actions/post_actions';
 import { closeModal } from '../../actions/modal_actions';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faQuoteLeft, faQuoteRight
+} from "@fortawesome/free-solid-svg-icons";
 
 class TextPostForm extends React.Component {
     constructor(props) {
@@ -24,50 +28,45 @@ class TextPostForm extends React.Component {
             [field]: e.currentTarget.value
         });
     }
+    
 
     handleSubmit(e) {
         // debugger 
         e.preventDefault();
         const post = Object.assign({}, this.state);
         this.props.createPost(post);
+        this.props.closeModal();
     }
         render() {
 
             return (
                 // <div className='text-post-form'>
-                <div >
-                    <form onSubmit={this.handleSubmit} className='new-post-container'>
-                        <div className='new-post-title'>
-                        <input 
-                        className = 'title-input'
-                        type="text" 
-                        placeholder="Title" 
-                        size='60'
-                        value={this.state.title}
-                        onChange={this.update('title')}
+                <form onSubmit={this.handleSubmit} className="new-post-container">
+                    <div className="new-post-title">
+                        <input
+                            className="title-input"
+                            type="text"
+                            placeholder="Title"
+                            size="60"
+                            value={this.state.title}
+                            onChange={this.update("title")}
                         />
-                       </div>
-                       <div className='new-post-text'>
-
-                        <input 
-                       className = 'text-input' 
-                       type="text" 
-                       placeholder="Text goes here"
-                       size='60'
-                       value={this.state.text}
-                       onChange={this.update('text')}
-                       />
-                       </div>
-                        <div className='new-post-bottom'>
-                        <button type ='submit' className='post-button'>Post</button>
-
+                    </div>
+                    <div>
+                      
+                        <textarea className="content-text"
+                            type="text"
+                            value={this.state.text}
+                            onChange={this.update("text")}
+                            placeholder="Text goes here"
+                        />
+                        <div className="post-form-footer">
+                            <button onClick={this.props.closeModal} className="close-modal">Close</button>
+                            <input className="submit-post" type="submit" onClick={(e) => this.handleSubmit(e)}/>
                         </div>
-                        {/* <div className='post-bottom'> */}
-{/* 
-                        </div> */}
-                    </form>
 
                     </div>
+                </form>
       
                 // </div>
 
@@ -84,7 +83,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     createPost : post => dispatch(createPost(post)),
-    closeModalForm: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal())
 })
 
 export default connect(mSTP, mDTP)(TextPostForm)

@@ -130,8 +130,11 @@ class SessionForm extends React.Component {
                 <div className="guestuser">
                   {this.guestUserLoginButton()}
                 </div>
-                <div className='error-message'>
-                {this.renderErrors()}
+              <div className='error-message'>
+              
+                  {this.renderErrors()}
+              
+                
 
                 </div>
             </form>

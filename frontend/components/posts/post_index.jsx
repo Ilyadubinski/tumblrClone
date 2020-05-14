@@ -21,7 +21,15 @@ class PostIndex extends React.Component {
     render() {
         let postitems = this.props.posts.map(post => {
             if (post) {
-                return <PostIndexItem post={post} key={post.id} />
+                return <PostIndexItem 
+                post={post} 
+                key={post.id} 
+                fetchSinglePost={this.props.fetchSinglePost} 
+                likePost={this.props.likePost} 
+                unlikePost={this.props.unlikePost} 
+                closeModal={this.props.closeModal}
+                openblogSeven={this.props.openblogsevenForm}
+                />
 
             } else {
                 return null
@@ -71,9 +79,10 @@ class PostIndex extends React.Component {
                             <img className="blog-avatar"
                                 src="https://img.icons8.com/color/48/000000/avatar.png"
                             id="75"
+                                onClick={this.props.openblogoneForm}
                         />
                             <div className='blog-2-title-descriction'>
-                                <div className='blog-2-title'>
+                                <div className='blog-2-title' onClick={this.props.openblogoneForm}>
                                     MenWithPonyTails
                                 </div>
                                 <div className='blog-2-description'>
@@ -87,9 +96,10 @@ class PostIndex extends React.Component {
                             <img className="blog-avatar"
                                 src="https://img.icons8.com/color/16/000000/beyoncé.png"
                                 id="75"
-                    />
+                                onClick={this.props.openblogtwoForm}
+                            />
                             <div className='blog-2-title-descriction'>
-                                <div className='blog-2-title'>
+                                <div className='blog-2-title' onClick={this.props.openblogtwoForm}>
                                     WaitBeckyDidWhat?
                                 </div>
                                 <div className='blog-2-description'>
@@ -102,9 +112,10 @@ class PostIndex extends React.Component {
                             <img className="blog-avatar"
                                 src="https://img.icons8.com/plasticine/100/000000/chuck-norris.png"
                                 id="75"
-                        />
+                                onClick={this.props.openblogthreeForm}
+                            />
                             <div className='blog-2-title-descriction'>
-                                <div className='blog-2-title'>NoMomIt'sNotAPHASE!</div>
+                                <div className='blog-2-title' onClick={this.props.openblogthreeForm}>NoMomIt'sNotAPHASE!</div>
                                 <div className='blog-2-description'>Angsty boys and their Mothers</div>
 
                             </div>
@@ -114,9 +125,10 @@ class PostIndex extends React.Component {
                             <img className="blog-avatar"
                                 src="https://img.icons8.com/cute-clipart/64/000000/frida-kahlo.png"
                                 id="75"
-                        />
+                                onClick={this.props.openblogfourForm}
+                             />
                             <div className='blog-2-title-descriction'>
-                                <div className='blog-2-title'>OfficialPeptoBismolBlog</div>
+                                <div className='blog-2-title' onClick={this.props.openblogfourForm}>OfficialPeptoBismolBlog</div>
                                 <div className='blog-2-description'>Pink like Majin Buu</div>
                             </div>
                             <FontAwesomeIcon icon={faPlusSquare} />
@@ -126,9 +138,10 @@ class PostIndex extends React.Component {
                             <img className="blog-avatar"
                                 src="https://dreamr-app.herokuapp.com/assets/cloud_avatar-35871f205f34d3ba755f43a0618a7ed8e732e01458082ddbf5d7b959534a59de.png"
                                 id="75"
+                                onClick={this.props.openblogfiveForm}
                             />
                             <div className='blog-2-title-descriction'>
-                                <div className='blog-2-title'>ScribblesOnTheWall</div>
+                                <div className='blog-2-title' onClick={this.props.openblogfiveForm}>ScribblesOnTheWall</div>
                                 <div className='blog-2-description'>Only silly geese fly south</div>
                             </div>
                             <FontAwesomeIcon icon={faPlusSquare} />
@@ -151,9 +164,10 @@ class PostIndex extends React.Component {
                             <img className="blog-avatar"
                                 src="https://dreamr-app.herokuapp.com/assets/cloud_avatar-35871f205f34d3ba755f43a0618a7ed8e732e01458082ddbf5d7b959534a59de.png"
                                 id="75"
+                                onClick={this.props.openblogsixForm}
                         />
                             <div className='blog-2-title-descriction'>
-                                <div className='blog-2-title'>TheOfficialPepsiBestie</div>
+                                <div className='blog-2-title' onClick={this.props.openblogsixForm}>TheOfficialPepsiBestie</div>
                                 <div className='blog-2-description'>Same Same but Different</div>
                             </div>
                             <FontAwesomeIcon icon={faPlusSquare} />

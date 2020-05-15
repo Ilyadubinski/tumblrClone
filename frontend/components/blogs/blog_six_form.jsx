@@ -35,7 +35,7 @@ class BlogSixForm extends React.Component {
         return (
             <div className="blog-container">
                 <div className="postbox-peek">
-                    <img className="blog-avatar"
+                    <img className="blog-show-avatar"
                         src="https://dreamr-app.herokuapp.com/assets/cloud_avatar-35871f205f34d3ba755f43a0618a7ed8e732e01458082ddbf5d7b959534a59de.png"
                         id="75"
                     />

@@ -35,7 +35,7 @@ class BlogOneForm extends React.Component {
         return (
             <div className="blog-container">
                 <div className="postbox-peek">
-                    <img className="blog-avatar"
+                    <img className="blog-show-avatar"
                         src="https://img.icons8.com/color/48/000000/avatar.png"
                         id="75"
                     />

@@ -35,14 +35,14 @@ class BlogSevenForm extends React.Component {
         return (
             <div className="blog-container">
                 <div className="postbox-peek">
-                    <img className="blog-1-avatar"
-                        src="https://img.icons8.com/color/48/000000/avatar.png"
+                    <img className="blog-show-avatar"
+                        src="https://img.icons8.com/color/48/000000/einstein.png"
                         id="75"
                     />
                     <div className="blog-show-title">
 
 
-                        DemoUser
+                        demo-user
 
                     </div>
                 </div>

@@ -19,22 +19,30 @@
 }
 
 .blog-show-title{
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
+    font-family: sans-serif;
 }
 
-.blog-1-avatar {
-    height: 50px;
-    width: 50px;
+.blog-show-avatar {
+    height: 70px;
+    width: 70px;
     background-color: #73b7d6;
     border-radius: 3px;
-    position: sticky;
-    top: 70px;
-    margin-right: 20px
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-family: sans-serif;
+   
 }
+
+
 
 img {
     cursor: pointer;

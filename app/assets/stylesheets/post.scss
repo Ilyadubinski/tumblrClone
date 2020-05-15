@@ -365,10 +365,18 @@ span {
         color: #4e4e4e;
 }
 
-#retweet-icon {
+.retweet {
     margin-left: 10px;
     margin-right: 10px;
         color: #4e4e4e;
+        cursor: pointer;
+}
+
+.retweeted {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #56CBFF;
+     cursor: pointer;
 }
 
 #post-icon {
@@ -426,6 +434,7 @@ span {
 //   height:20px;
 //   margin:200px auto;
 // color: #4e4e4e;
+color: #4e4e4e;
 margin-left: 10px;
   transform:translateZ(0);
   cursor: pointer;
@@ -539,5 +548,14 @@ margin-left: 10px;
 .heart-liked {
     margin-left: 10px;
     color: red;
+    cursor: pointer;
+}
+
+.add {
+    cursor: pointer;
+}
+
+.added {
+    color: #56CBFF;
     cursor: pointer;
 }

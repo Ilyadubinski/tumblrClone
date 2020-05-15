@@ -4,7 +4,7 @@ import NavigationBarContainer from '../navigation_bar_container';
 import PostIndexItem from './post_index_item';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faCamera, faQuoteLeft, faHeadphones, faVideo, faPlusSquare, faComment, faRetweet, faCog
+    faCamera, faQuoteLeft, faHeadphones, faVideo, faPlusSquare, faComment, faRetweet, faCog, faCheckSquare
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -13,6 +13,28 @@ import {
 
 
 class PostIndex extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            reblogged: false
+        }
+    }
+
+    reblog(e) {
+        const post = this.props.post;
+
+        const reblog = e.target
+        if (this.state.reblogged) {
+            this.setState({ reblogged: false });
+
+            reblog.classList.remove('added')
+        } else {
+            this.setState({ reblogged: true });
+            reblog.classList.add("added")
+        }
+    }
+
 
     componentDidMount() {
         this.props.fetchAllPosts()
@@ -90,7 +112,10 @@ class PostIndex extends React.Component {
                                 </div>
 
                             </div>
+                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
                             <FontAwesomeIcon icon={faPlusSquare}/>
+                            </div>
+                            
                         </div>
                         <div className='blog-2'>
                             <img className="blog-avatar"
@@ -106,7 +131,9 @@ class PostIndex extends React.Component {
                                     She is literally unbelievable
                                 </div>
                             </div>
-                            <FontAwesomeIcon icon={faPlusSquare} />
+                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                                <FontAwesomeIcon icon={faPlusSquare} />
+                            </div>
                         </div>
                         <div className='blog-2'>
                             <img className="blog-avatar"
@@ -119,7 +146,9 @@ class PostIndex extends React.Component {
                                 <div className='blog-2-description'>Angsty boys and their Mothers</div>
 
                             </div>
-                            <FontAwesomeIcon icon={faPlusSquare} />
+                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                                <FontAwesomeIcon icon={faPlusSquare} />
+                            </div>
                         </div>
                         <div className='blog-2'>
                             <img className="blog-avatar"
@@ -131,7 +160,9 @@ class PostIndex extends React.Component {
                                 <div className='blog-2-title' onClick={this.props.openblogfourForm}>OfficialPeptoBismolBlog</div>
                                 <div className='blog-2-description'>Pink like Majin Buu</div>
                             </div>
-                            <FontAwesomeIcon icon={faPlusSquare} />
+                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                                <FontAwesomeIcon icon={faPlusSquare} />
+                            </div>
                         </div>
                         <h4 className='radar-title'>Radar</h4>
                         <div className='blog-2'>
@@ -144,7 +175,9 @@ class PostIndex extends React.Component {
                                 <div className='blog-2-title' onClick={this.props.openblogfiveForm}>ScribblesOnTheWall</div>
                                 <div className='blog-2-description'>Only silly geese fly south</div>
                             </div>
-                            <FontAwesomeIcon icon={faPlusSquare} />
+                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                                <FontAwesomeIcon icon={faPlusSquare} />
+                            </div>
                         </div>
                         
                         <div className='poster'>
@@ -170,7 +203,9 @@ class PostIndex extends React.Component {
                                 <div className='blog-2-title' onClick={this.props.openblogsixForm}>TheOfficialPepsiBestie</div>
                                 <div className='blog-2-description'>Same Same but Different</div>
                             </div>
-                            <FontAwesomeIcon icon={faPlusSquare} />
+                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                                <FontAwesomeIcon icon={faPlusSquare} />
+                            </div>
                         </div>
                         <div className='poster'>
                             <img src={window.rossurl} size='60' />

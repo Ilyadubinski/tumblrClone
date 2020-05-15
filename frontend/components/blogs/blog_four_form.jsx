@@ -35,7 +35,7 @@ class BlogFourForm extends React.Component {
         return (
             <div className="blog-container">
                 <div className="postbox-peek">
-                    <img className="blog-avatar"
+                    <img className="blog-show-avatar"
                         src="https://img.icons8.com/cute-clipart/64/000000/frida-kahlo.png"
                         id="75"
                     />

@@ -21,10 +21,24 @@ import BlogSixFormContainer from "../blogs/blog_six_form";
 
 import BlogSevenFormContainer from "../blogs/blog_seven_form";
 
+import EditDeleteFormContainer from "../posts/edit_delete_form_container";
+
 function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
     }
+
+  if (modal === "edit-delete-form-container") {
+    
+    return (
+      // <div className="modalTwo-background" onClick={closeModal}>
+        // CORRECT BACKGROUND
+        // <div className="modalTwo-child" onClick={e => e.stopPropagation()}>
+          <EditDeleteFormContainer />
+        // </div>
+      // </div>
+    )
+  }
     let component;
     switch (modal) {
       case "text-post-form":
@@ -63,10 +77,14 @@ function Modal({ modal, closeModal }) {
       case "blog-seven-form":
         component = <BlogSevenFormContainer />;
         break;
+      // case "edit-delete-form-container":
+      //   component = <EditDeleteFormContainer />;
+      //   break;
       default:
         return null;
     }
     return (
+      
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
                 {component}

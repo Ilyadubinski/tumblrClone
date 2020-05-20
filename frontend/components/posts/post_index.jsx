@@ -17,7 +17,24 @@ class PostIndex extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            liked: false,
             reblogged: false
+        }
+    }
+
+    reblogTwo(e) {
+        const post = this.props.post;
+
+        const reblog = e.target
+        if (this.state.reblogged) {
+            this.setState({ reblogged: false });
+
+            reblog.classList.remove('added')
+            reblog.classList.add("add")
+        } else {
+            this.setState({ reblogged: true });
+            reblog.classList.remove('add')
+            reblog.classList.add("added")
         }
     }
 
@@ -28,12 +45,37 @@ class PostIndex extends React.Component {
         if (this.state.reblogged) {
             this.setState({ reblogged: false });
 
-            reblog.classList.remove('added')
+            reblog.classList.remove('retweeted')
+            reblog.classList.add("retweet")
         } else {
             this.setState({ reblogged: true });
-            reblog.classList.add("added")
+            reblog.classList.remove('retweet')
+            reblog.classList.add("retweeted")
         }
     }
+
+    toggleLike(e) {
+        const post = this.props.post;
+        
+        const heart = e.target
+
+        if (this.state.liked) {
+            // this.props.unlikePost(post.id)
+            // .then(() => {
+            this.setState({ liked: false });
+            heart.classList.remove('heart-liked')
+            heart.classList.add("heart")
+            // })
+        } else {
+            // this.props.likePost(post.id)
+            // .then(() => { 
+            this.setState({ liked: true });
+            heart.classList.remove('heart')
+            heart.classList.add("heart-liked")
+            // })
+        }
+    }
+
 
 
     componentDidMount() {
@@ -51,6 +93,9 @@ class PostIndex extends React.Component {
                 unlikePost={this.props.unlikePost} 
                 closeModal={this.props.closeModal}
                 openblogSeven={this.props.openblogsevenForm}
+                fetchAllLikes={this.props.fetchAllLikes}
+                currentUser={this.props.currentUser}
+                EditDeletePostForm={this.props.EditDeletePostForm}
                 />
 
             } else {
@@ -112,7 +157,7 @@ class PostIndex extends React.Component {
                                 </div>
 
                             </div>
-                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                            <div className="add" onClick={(e) => this.reblogTwo(e)} id='retweet-div'>
                             <FontAwesomeIcon icon={faPlusSquare}/>
                             </div>
                             
@@ -131,7 +176,7 @@ class PostIndex extends React.Component {
                                     She is literally unbelievable
                                 </div>
                             </div>
-                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                            <div className="add" onClick={(e) => this.reblogTwo(e)} id='retweet-div'>
                                 <FontAwesomeIcon icon={faPlusSquare} />
                             </div>
                         </div>
@@ -146,7 +191,7 @@ class PostIndex extends React.Component {
                                 <div className='blog-2-description'>Angsty boys and their Mothers</div>
 
                             </div>
-                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                            <div className="add" onClick={(e) => this.reblogTwo(e)} id='retweet-div'>
                                 <FontAwesomeIcon icon={faPlusSquare} />
                             </div>
                         </div>
@@ -160,7 +205,7 @@ class PostIndex extends React.Component {
                                 <div className='blog-2-title' onClick={this.props.openblogfourForm}>OfficialPeptoBismolBlog</div>
                                 <div className='blog-2-description'>Pink like Majin Buu</div>
                             </div>
-                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                            <div className="add" onClick={(e) => this.reblogTwo(e)} id='retweet-div'>
                                 <FontAwesomeIcon icon={faPlusSquare} />
                             </div>
                         </div>
@@ -175,7 +220,7 @@ class PostIndex extends React.Component {
                                 <div className='blog-2-title' onClick={this.props.openblogfiveForm}>ScribblesOnTheWall</div>
                                 <div className='blog-2-description'>Only silly geese fly south</div>
                             </div>
-                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                            <div className="add" onClick={(e) => this.reblogTwo(e)} id='retweet-div'>
                                 <FontAwesomeIcon icon={faPlusSquare} />
                             </div>
                         </div>
@@ -186,10 +231,14 @@ class PostIndex extends React.Component {
                         </div>
                         <div className='poster-bottom'>
                             <div className='post-bottom'>
-                            <FontAwesomeIcon icon={faComment} id='post-icon' />
-                            <FontAwesomeIcon icon={faRetweet} id='retweet-icon' />
+                            <FontAwesomeIcon icon={faComment} id='post-icon' className="comment"/>
+                                <div className="retweet" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                                    <FontAwesomeIcon icon={faRetweet} />
+                                </div>
                             <FontAwesomeIcon icon={faCog} id='post-icon' />
-
+                                <div className="heart" onClick={(e) => this.toggleLike(e)} id='heart-div'>
+                                    ❤
+                                </div>
                             </div>
                         </div>
                         <h4 className='radar-title'>Sponsored</h4>
@@ -203,12 +252,25 @@ class PostIndex extends React.Component {
                                 <div className='blog-2-title' onClick={this.props.openblogsixForm}>TheOfficialPepsiBestie</div>
                                 <div className='blog-2-description'>Same Same but Different</div>
                             </div>
-                            <div className="add" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                            <div className="add" onClick={(e) => this.reblogTwo(e)} id='retweet-div'>
                                 <FontAwesomeIcon icon={faPlusSquare} />
                             </div>
+                           
                         </div>
                         <div className='poster'>
                             <img src={window.rossurl} size='60' />
+                        </div>
+                        <div className='poster-bottom'>
+                            <div className='post-bottom'>
+                                <FontAwesomeIcon icon={faComment} id='post-icon' className="comment" />
+                                <div className="retweet" onClick={(e) => this.reblog(e)} id='retweet-div'>
+                                    <FontAwesomeIcon icon={faRetweet} />
+                                </div>
+                                <FontAwesomeIcon icon={faCog} id='post-icon' />
+                                <div className="heart" onClick={(e) => this.toggleLike(e)} id='heart-div'>
+                                    ❤
+                                </div>
+                            </div>
                         </div>
                         <h5 className='fineprint'>About Wander ads</h5>
                         <h5 className='fineprint'>Please sell my personal information</h5>

@@ -17,7 +17,7 @@ class BlogFourForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    
     update(field) {
         return (e) =>
             this.setState({
@@ -32,6 +32,7 @@ class BlogFourForm extends React.Component {
         this.props.createPost(post);
     }
     render() {
+        
         return (
             <div className="blog-container">
                 <div className="postbox-peek">

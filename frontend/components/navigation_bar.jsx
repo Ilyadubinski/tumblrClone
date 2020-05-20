@@ -2,11 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faGithub
+    faGithub, faSearch,faLinkedin, faAngellist, 
 } from "@fortawesome/free-brands-svg-icons";
-import {
-     faSearch
-} from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -35,7 +32,7 @@ class NavigationBar extends React.Component {
 
                     {/* <h2>Hi, {this.props.currentUser.username}!</h2> */}
                     <button className='logout-button' onClick={this.props.logout}>Log Out</button>
-
+                    <i className="fas fa-user"></i>
 
                 </ul>
             </nav>)
@@ -63,13 +60,35 @@ class NavigationBar extends React.Component {
                     </form>
                 </div>
                 <ul className="devlinks">
-                    <a href="https://github.com/Ilyadubinski" target='_blank'>
-                        <FontAwesomeIcon
-                            icon={faGithub}
-                            className="social-icon"
-                            id="github-icon"
-                        /></a>
+                    <li>
+                        <a href="https://github.com/Ilyadubinski" target='_blank'>
+                            <FontAwesomeIcon
+                                icon={faGithub}
+                                className="social-icon"
+                                id="github-icon"
+                            />
+                        </a>
+                    </li>
+                  
+                    <li>
+                        <a href="https://www.linkedin.com/in/ilyadubinski/" target='_blank'>
+                            <FontAwesomeIcon
+                                icon={faLinkedin}
+                                className="social-icon"
+                                id="github-icon"
+                            />
+                        </a>
+                    </li>
 
+                    <li>
+                        <a href="https://angel.co/u/ilya-dubinski" target='_blank'>
+                            <FontAwesomeIcon
+                                icon={faAngellist}
+                                className="social-icon"
+                                id="github-icon"
+                            />
+                        </a>
+                    </li>
                 </ul>
                 {rightNavButtons}
             </div>

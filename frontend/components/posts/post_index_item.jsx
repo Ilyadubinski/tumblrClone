@@ -8,18 +8,38 @@ import {
 class PostIndexItem extends React.Component {
     
     constructor(props) {
+      
         super(props)
+        // debugger 
         this.state = {
-          liked : false,
+          liked : "bleeeeep",
           reblogged : false 
         }
-    }
-
-
-    // componentDidMount() {
+      }
+      
+      
+      
+      componentDidMount() {
+        let currentUser = this.props.currentUser
+        this.props.post.likes.forEach(like => {
+          // debugger 
+          if (like.user_id === currentUser.id) {
+          
+            this.setState({liked : true})
+        
+            // console.log(this.state.liked) 
+            // ---returning 18 fales 
+            // heart.classList.remove('heart')
+            // heart.classList.add("heart-liked")
+            // select heart and add/ remove css to indicate that the like ids do match. 
+        }
     
-    //         this.props.fetchSinglePost(this.props.postId);
-    // }
+        })
+    
+    //   this.props.fetchAllLikes();
+    //   debugger 
+    //   this.setState({ liked : this.props.liked })
+    }
 
     // componentDidUpdate(prevState) {
   
@@ -27,10 +47,20 @@ class PostIndexItem extends React.Component {
     //         this.setState({ liked: this.props.liked });
     //     }
     // }
+  // handleClick(userLiked) {
+  //   const { likePost, unlikePost, currentUser, post, likes } = this.props;
+
+  //   if (userLiked) {
+  //     let userLike = likes.find(like => like.userId === currentUser.id);
+  //     unlikePost(userLike.id);
+  //   } else {
+  //     likePost({ user_id: currentUser.id, like_id: post.id });
+  //   }
+  // }
 
     toggleLike(e) {
         const post = this.props.post;
-        // debugger 
+        
         const heart = e.target
 
         if (this.state.liked) {
@@ -39,6 +69,8 @@ class PostIndexItem extends React.Component {
               this.setState({ liked: false });
               heart.classList.remove('heart-liked')
               heart.classList.add("heart")
+
+
             // })
         } else {
             this.props.likePost(post.id)
@@ -67,8 +99,7 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-      // console.log(this.props)
-      //  debugger 
+  
         return (
           <div className="post-container">
             <div className="avatar" onClick={this.props.openblogSeven}>
@@ -89,12 +120,15 @@ class PostIndexItem extends React.Component {
               <div className="post-text">{this.props.post.text}</div>
 
               <div className="post-bottom">
-                <FontAwesomeIcon icon={faComment} id="post-icon" />
+                <FontAwesomeIcon icon={faComment} id="post-icon" className="comment"/>
 
                 <div className="retweet" onClick={(e) => this.reblog(e)} id='retweet-div'>
                 <FontAwesomeIcon icon={faRetweet}/>
                 </div>
+                <div className="meow" onClick={this.props.EditDeletePostForm}>
                 <FontAwesomeIcon icon={faCog} id="post-icon" />
+
+                </div>
                 <div className="heart" onClick={(e) => this.toggleLike(e) } id='heart-div'>
                   ❤
                 </div>

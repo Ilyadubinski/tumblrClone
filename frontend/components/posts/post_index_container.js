@@ -4,7 +4,7 @@ import PostIndex from './post_index';
 import { fetchAllPosts, fetchSinglePost } from "../../actions/post_actions";
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
-import { likePost, unlikePost } from '../../actions/like_actions';
+import { likePost, unlikePost, fetchAllLikes } from '../../actions/like_actions';
 // post index item is my dashboard..should like and unlike be here? 
 // I am just going to allow for the demo user to like and unlike a post. 
 // I can do that on the front end..but does it make sense for that to persist
@@ -14,7 +14,9 @@ import { likePost, unlikePost } from '../../actions/like_actions';
 const msp = (state) => {
     return {
         posts: Object.values(state.entities.posts),
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        // NOT WORKING
+        // likes: Object.values(state.entities.likes).filter(like => like.id === ownProps.post.id)
     }
 };
 
@@ -37,6 +39,8 @@ const mdp = (dispatch) => ({
   likePost: (postId) => dispatch(likePost(postId)),
   unlikePost: (postId) => dispatch(unlikePost(postId)),
   logout: () => dispatch(logout()),
+  fetchAllLikes: () => dispatch(fetchAllLikes()),
+  EditDeletePostForm: () => dispatch(openModal("edit-delete-form-container"))
 });
 
 export default connect(msp, mdp)(PostIndex);

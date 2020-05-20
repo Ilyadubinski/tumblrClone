@@ -13,11 +13,13 @@ import {
 } from 'react-router-dom';
 import postIndexContainer from "./posts/post_index_container";
 import Modal from './modal/modal';
+import ModalTwo from './modal/ModalTwo';
 
 
 const App = () => (
   <div>
     <Modal />
+    {/* <ModalTwo /> */}
     {/* <header className="logo-position">
     <Link to="/" >
         <p className="logo">Wander</p>

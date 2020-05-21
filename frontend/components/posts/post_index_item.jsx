@@ -104,6 +104,14 @@ class PostIndexItem extends React.Component {
 
     render() {
         let heartClass = this.state.liked ? "heart-liked" : "heart"
+        //   if (this.props.post.photoUrl) {
+        //     let photo = this.props.post.photoUrl
+        //   }
+        let imgTag; 
+        if (this.props.post.photoUrl) {
+          imgTag = <div><img src={this.props.post.photoUrl} width="5%" /></div>
+        } 
+        // debugger
         return (
           <div className="post-container">
             <div className="avatar" onClick={this.props.openblogSeven}>
@@ -115,14 +123,20 @@ class PostIndexItem extends React.Component {
               />
             </div>
             <div className="post-box">
-              <div className="post-top" onClick={this.props.openblogSeven}>demo-user</div>
+              <div className="post-top" onClick={this.props.openblogSeven}> {this.props.currentUser.username}</div>
 
               <div className="post-title">{this.props.post.title}</div>
 
-              <div><img src={this.props.post.photoURL} width="99%"></img></div>
-
-              <div className="post-text">{this.props.post.text}</div>
-
+              
+            
+              <div className="post-text">
+                <div className='img-container'>
+                
+                </div>
+                {imgTag}
+                {this.props.post.text}
+                </div>
+              
               <div className="post-bottom">
                 <FontAwesomeIcon icon={faComment} id="post-icon" className="comment"/>
 

@@ -42,8 +42,16 @@ class BlogSevenForm extends React.Component {
                     <div className="blog-show-title">
 
 
-                        demo-user
+                        {this.props.CurrentUser.username}
 
+                    </div>
+
+                    <div>
+                        {/* this.props.posts is undefined....this form does not have access to posts */}
+                        {this.props.posts.map(post => 
+                            
+                            <li>{post.title}</li>
+                        )}
                     </div>
                 </div>
 
@@ -55,7 +63,7 @@ class BlogSevenForm extends React.Component {
 }
 
 const mSTP = (state) => ({
-    post_Type: state.ui.modal,
+    posts: Object.values(state.entities.posts),
     CurrentUser: state.entities.users[state.session.id],
 });
 

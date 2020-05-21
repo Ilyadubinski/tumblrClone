@@ -16,3 +16,7 @@ Post.create(title: "Someone Smart-",text: "'The unexamined life is not worth liv
 Post.create(title: "Cup of Yogurt-",text: "'what exactly is that water on top?'", post_type: "text", user_id: user2.id)
 Post.create(title: "Something New",text: "'Your fingers were covered in cheeto dust, and as cold as popsicles..'", post_type: "text", user_id: user2.id)
 Post.create(title: "Tommy James-",text: "'Crimson and clover, over and over.'", post_type: "text", user_id: user2.id)
+
+
+
+

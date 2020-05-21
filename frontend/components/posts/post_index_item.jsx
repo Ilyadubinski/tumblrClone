@@ -12,7 +12,7 @@ class PostIndexItem extends React.Component {
         super(props)
         // debugger 
         this.state = {
-          liked : "bleeeeep",
+          liked : false,
           reblogged : false 
         }
       }
@@ -24,9 +24,13 @@ class PostIndexItem extends React.Component {
         this.props.post.likes.forEach(like => {
           // debugger 
           if (like.user_id === currentUser.id) {
-          
             this.setState({liked : true})
-        
+            // if ( this.state.liked ) {
+              // debugger 
+              // let heart = document.getElementById('heart-div')
+              // heart.classList.remove('heart')
+              // heart.classList.add("heart-liked")
+            // }
             // console.log(this.state.liked) 
             // ---returning 18 fales 
             // heart.classList.remove('heart')
@@ -99,7 +103,7 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-  
+        let heartClass = this.state.liked ? "heart-liked" : "heart"
         return (
           <div className="post-container">
             <div className="avatar" onClick={this.props.openblogSeven}>
@@ -129,7 +133,7 @@ class PostIndexItem extends React.Component {
                 <FontAwesomeIcon icon={faCog} id="post-icon" />
 
                 </div>
-                <div className="heart" onClick={(e) => this.toggleLike(e) } id='heart-div'>
+                <div className={heartClass} onClick={(e) => this.toggleLike(e) } id='heart-div'>
                   ❤
                 </div>
               </div>

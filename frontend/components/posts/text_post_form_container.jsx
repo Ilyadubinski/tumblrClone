@@ -12,9 +12,7 @@ class TextPostForm extends React.Component {
         super(props)
         this.state = { 
             title: "", 
-            text: "", 
-            content_url: "", 
-            tags: "", 
+            text: "",  
             user_id: this.props.CurrentUser.id, 
             post_type: "text"
         }
@@ -32,9 +30,19 @@ class TextPostForm extends React.Component {
 
     handleSubmit(e) {
         // debugger 
+        // e.preventDefault();
+        // const post = Object.assign({}, this.state);
+        // this.props.createPost(post);
+        // this.props.closeModal();
+
         e.preventDefault();
-        const post = Object.assign({}, this.state);
-        this.props.createPost(post);
+        const formData = new FormData();
+        formData.append('post[title]', this.state.title);
+        formData.append('post[text]', this.state.text);
+        formData.append('post[user_id]', this.state.user_id);
+       
+       
+        this.props.createPost(formData);
         this.props.closeModal();
     }
         render() {

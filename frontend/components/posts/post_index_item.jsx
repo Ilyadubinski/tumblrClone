@@ -129,7 +129,7 @@ class PostIndexItem extends React.Component {
         let editDelete;
         if (this.state.open) {
           editDelete = <div className="post-menu">
-            <button onClick={this.handleEdit}>Edit</button>
+            {/* <button onClick={this.handleEdit}>Edit</button> */}
             <button onClick={this.handleDelete}>Delete</button>
           
           </div>

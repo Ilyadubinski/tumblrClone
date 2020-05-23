@@ -96,6 +96,7 @@ class PostIndex extends React.Component {
                 fetchAllLikes={this.props.fetchAllLikes}
                 currentUser={this.props.currentUser}
                 EditDeletePostForm={this.props.EditDeletePostForm}
+                deletePost={this.props.deletePost}
                 />
 
             } else {

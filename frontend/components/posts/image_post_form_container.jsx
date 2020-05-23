@@ -49,6 +49,7 @@ class ImagePostForm extends React.Component {
       formData.append('post[photo]', this.state.photoFile);
     }
     this.props.createPost(formData);
+    this.props.closeModal();
   }
 
   // handleFile(e) {
@@ -77,7 +78,7 @@ class ImagePostForm extends React.Component {
   render() {
     console.log(this.state)
 
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} width="20%" height="20%" /> : null;
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} width="100%" height="20%" /> : null;
 
     return (
       // <div className='text-post-form'>
@@ -93,33 +94,35 @@ class ImagePostForm extends React.Component {
         />
       </div>
       <div>
-            <input className="upload"
+            {/* <input className="upload"
               type="file"
               name="file"
               id="file"
               onChange={this.handleFile}
-            />
+            /> */}
           
             <div className="upload-file">
               
               
-            {/* <label htmlFor="m" className="custom-file-input"> */}
+            <label htmlFor="m">
               <p> <FontAwesomeIcon icon={faCameraRetro} className='camera-icon' /></p>
               <p>Upload a photo</p>
-              <div className="custom-file-input">
+           
               <input 
               type="file"
-                id="m"
-                
+               id='m'
                 onChange={this.handleFile} 
-                
+                  className="custom-file-input"
                 />
+            </label>
+            
+              <div className='preview-container'>
+            {preview}
 
               </div>
-            {/* </label> */}
-          <div>
-            {preview}
-          </div>
+     
+          
+        
               
 
             </div>

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import PostIndex from './post_index';
-import { fetchAllPosts, fetchSinglePost } from "../../actions/post_actions";
+import { fetchAllPosts, fetchSinglePost, deletePost } from "../../actions/post_actions";
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
 import { likePost, unlikePost, fetchAllLikes } from '../../actions/like_actions';
@@ -22,6 +22,7 @@ const msp = (state) => {
 
 const mdp = (dispatch) => ({
   closeModal: () => dispatch(closeModal()),
+  deletePost: (postId) => dispatch(deletePost(postId)),
   fetchSinglePost: () => dispatch(fetchSinglePost(postId)),
   fetchAllPosts: () => dispatch(fetchAllPosts()),
   openTextPostForm: () => dispatch(openModal("text-post-form")),

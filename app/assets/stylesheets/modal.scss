@@ -32,10 +32,11 @@
 }
 
 .upload {
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -2;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
 }
 
 .upload-file {
@@ -47,7 +48,7 @@
     border-top: 1px dashed grey;
     border-bottom: 1px dashed grey;
     background-color: rgb(242, 242, 242);
-    height: 170px;
+  
     font-family: sans-serif;
 }
 
@@ -119,3 +120,11 @@
     resize: none;
     font-family: sans-serif;
 }
+
+.preview-container {
+    height: inherit;
+    width: inherit;
+}
+ li {
+    //  list-style-type: none;
+ }

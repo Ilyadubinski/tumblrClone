@@ -49,17 +49,17 @@ class AudioPostForm extends React.Component {
           />
         </div>
         <div>
-          <input className="upload"
-            type="file"
-            name="file"
-            id="file"
-            onChange={this.handleFile}
-          />
+          
           <label htmlFor="file">
             <div className="upload-file">
               <p> <FontAwesomeIcon icon={faHeadphones} className='camera-icon' /></p>
+              <input className="upload"
+                type="file"
+                name="file"
+                id="file"
+                onChange={this.handleFile}
+              />
               <p>Upload audio</p>
-              {/* <p><i className="far fa-laugh-squint"></i></p> */}
             </div>
           </label>
           <textarea className="content-tag"

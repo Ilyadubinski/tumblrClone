@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_POSTS, RECEIVE_POST } from '../actions/post_actions';
+import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST} from '../actions/post_actions';
 
 
 const postReducer = (prevState = {}, action) => {
@@ -10,6 +10,10 @@ const postReducer = (prevState = {}, action) => {
             return newState;
         case RECEIVE_POST:
             newState[action.post.id] = action.post;
+            return newState;
+        case REMOVE_POST: 
+        // debugger 
+            delete newState[action.postId];
             return newState;
         default:
             return prevState;

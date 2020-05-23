@@ -10,16 +10,16 @@
 
 .postbox-peek {
 	width: 100%;
-    height: 300px;
+    // height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    align-items: center;
+    font-family: sans-serif;
 }
 
 .blog-show-title{
-    margin-top: 30px;
+    // margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +37,7 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    align-items: center;
+    align-self: center;
     font-family: sans-serif;
    
 }
@@ -46,4 +46,57 @@
 
 img {
     cursor: pointer;
+}
+
+.li-post {
+    text-decoration: underline;
+    margin-left: 40px;
+}
+
+
+.post-menu {
+    background-color: white;
+    position: absolute;
+    // bottom: -65px;
+    // left: 550px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 10px;
+    width: 75px;
+    height: 75px;
+    z-index: 2;
+    color: darkgray;
+    font-family: sans-serif;
+    text-align: left;
+    box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+    font-weight: initial;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.post-menu button {
+    border: none;
+    height: 30px;
+    font-size: 15px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.post-menu button:hover {
+    background: rgb(219, 228, 236);
+}
+
+button {
+    border: none; 
+}
+
+.post-controls-container {
+    background-color: whitesmoke;
+}
+
+.button-white {
+    background-color: whitesmoke;
 }

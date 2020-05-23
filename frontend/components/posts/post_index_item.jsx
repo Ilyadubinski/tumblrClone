@@ -10,14 +10,35 @@ class PostIndexItem extends React.Component {
     constructor(props) {
       
         super(props)
-        // debugger 
+        
+      this.handleToggleMenu = this.handleToggleMenu.bind(this);
+      this.handleEdit = this.handleEdit.bind(this);
+      this.handleDelete = this.handleDelete.bind(this);
+
         this.state = {
           liked : false,
-          reblogged : false 
+          reblogged : false,
+          open: false 
         }
       }
       
-      
+  handleToggleMenu() {
+    // debugger 
+    this.setState({
+      open: !this.state.open
+    })
+  }
+
+  handleEdit(event) {
+    event.preventDefault();
+    this.props.openEditForm(this.props.post.id);
+  }
+
+  handleDelete(event) {
+    // debugger 
+    event.preventDefault();
+    this.props.deletePost(this.props.post.id);
+  }
       
       componentDidMount() {
         let currentUser = this.props.currentUser
@@ -104,12 +125,20 @@ class PostIndexItem extends React.Component {
 
     render() {
         let heartClass = this.state.liked ? "heart-liked" : "heart"
-        //   if (this.props.post.photoUrl) {
-        //     let photo = this.props.post.photoUrl
-        //   }
+        
+        let editDelete;
+        if (this.state.open) {
+          editDelete = <div className="post-menu">
+            <button onClick={this.handleEdit}>Edit</button>
+            <button onClick={this.handleDelete}>Delete</button>
+          
+          </div>
+        }
+
+
         let imgTag; 
         if (this.props.post.photoUrl) {
-          imgTag = <div><img src={this.props.post.photoUrl} width="5%" /></div>
+          imgTag = <div><img src={this.props.post.photoUrl} width="100%" /></div>
         } 
         // debugger
         return (
@@ -143,10 +172,19 @@ class PostIndexItem extends React.Component {
                 <div className="retweet" onClick={(e) => this.reblog(e)} id='retweet-div'>
                 <FontAwesomeIcon icon={faRetweet}/>
                 </div>
-                <div className="meow" onClick={this.props.EditDeletePostForm}>
-                <FontAwesomeIcon icon={faCog} id="post-icon" />
+                {/* <div className="meow" onClick={this.props.EditDeletePostForm}> */}
+
+                <div className='post-controls-container'>
+                  <button onClick={this.handleToggleMenu} className='button-white'>
+                  <FontAwesomeIcon icon={faCog} id="post-icon" />
+                  </button>
 
                 </div>
+
+
+                {editDelete}
+
+                {/* </div> */}
                 <div className={heartClass} onClick={(e) => this.toggleLike(e) } id='heart-div'>
                   ❤
                 </div>

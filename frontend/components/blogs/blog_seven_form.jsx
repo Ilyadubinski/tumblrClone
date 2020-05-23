@@ -41,23 +41,30 @@ class BlogSevenForm extends React.Component {
                     />
                     <div className="blog-show-title">
 
-
+        
                         {this.props.CurrentUser.username}
 
+                    
+
                     </div>
 
-                    <div>
+                    <div className='blog-list'>
                         {/* this.props.posts is undefined....this form does not have access to posts */}
+                       
+                        <li className='li-post' style={{ "listStyle": "none" }}>Posts </li> 
                         {this.props.posts.map(post => 
-                            
-                            <li>{post.title}</li>
+                            <ul style={{"listStyle":"none"}}>
+
+                                <li>{post.title}</li>
+
+                            </ul>
                         )}
-                    </div>
+                    
                 </div>
 
             </div>
 
-            // </div>
+            </div>
         );
     }
 }

@@ -13,12 +13,13 @@ class VideoPostForm extends React.Component {
     this.state = {
       title: "",
       text: "",
-      content_url: "",
-      tags: "",
+      photoFile: null,
+      photoUrl: null,
       user_id: this.props.CurrentUser.id,
       post_type: "video",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   update(field) {
@@ -29,12 +30,38 @@ class VideoPostForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
-    const post = Object.assign({}, this.state);
-    this.props.createPost(post);
+    const formData = new FormData();
+    formData.append('post[title]', this.state.title);
+    formData.append('post[text]', this.state.text);
+    formData.append('post[user_id]', this.state.user_id);
+    formData.append('post[original_post_id]', this.state.original_post_id);
+    if (this.state.photoFile) {
+      formData.append('post[photo]', this.state.photoFile);
+    }
+    this.props.createPost(formData);
+    this.props.closeModal();
   }
+
+  handleFile(e) {
+
+    e.preventDefault();
+    const file = e.currentTarget.files[0];
+    e.currentTarget.value = null;
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
+
   render() {
+
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} width="100%" height="20%" /> : null;
+
     return (
       // <div className='text-post-form'>
       <form onSubmit={this.handleSubmit} className="new-post-container">
@@ -48,23 +75,39 @@ class VideoPostForm extends React.Component {
             onChange={this.update("title")}
           />
         </div>
+
         <div>
-          <input className="upload"
-            type="file"
-            name="file"
-            id="file"
-            onChange={this.handleFile}
-          />
-          <label htmlFor="file">
-            <div className="upload-file">
+
+          <div className="upload-file">
+
+
+            <label htmlFor="m">
               <p> <FontAwesomeIcon icon={faPhotoVideo} className='camera-icon' /></p>
               <p>Upload video</p>
-              {/* <p><i className="far fa-laugh-squint"></i></p> */}
+              <input
+                type="file"
+                id='m'
+                onChange={this.handleFile}
+                className="custom-file-input"
+              />
+            </label>
+
+            <div className='preview-container'>
+              {preview}
+
             </div>
-          </label>
+
+
+
+
+
+          </div>
+
+
+
           <textarea className="content-tag"
             type="text"
-            value={this.state.content}
+            value={this.state.text}
             onChange={this.update("text")}
             placeholder="Add a caption, if you like"
           />

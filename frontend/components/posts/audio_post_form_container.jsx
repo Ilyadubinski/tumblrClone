@@ -13,12 +13,14 @@ class AudioPostForm extends React.Component {
     this.state = {
       title: "",
       text: "",
-      content_url: "",
+      photoFile: null,
+      photoUrl: null,
       tags: "",
       user_id: this.props.CurrentUser.id,
-      post_type: "text",
+      post_type: "audio",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   update(field) {
@@ -29,12 +31,36 @@ class AudioPostForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
-    const post = Object.assign({}, this.state);
-    this.props.createPost(post);
+    const formData = new FormData();
+    formData.append('post[title]', this.state.title);
+    formData.append('post[text]', this.state.text);
+    formData.append('post[user_id]', this.state.user_id);
+    formData.append('post[original_post_id]', this.state.original_post_id);
+    if (this.state.photoFile) {
+      formData.append('post[photo]', this.state.photoFile);
+    }
+    this.props.createPost(formData);
+    this.props.closeModal();
   }
+
+  handleFile(e) {
+
+    e.preventDefault();
+    const file = e.currentTarget.files[0];
+    e.currentTarget.value = null;
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   render() {
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} width="100%" height="20%" /> : null;
+    
     return (
       // <div className='text-post-form'>
       <form onSubmit={this.handleSubmit} className="new-post-container">
@@ -50,21 +76,31 @@ class AudioPostForm extends React.Component {
         </div>
         <div>
           
-          <label htmlFor="file">
-            <div className="upload-file">
+          <div className="upload-file">
+          <label htmlFor="m">
               <p> <FontAwesomeIcon icon={faHeadphones} className='camera-icon' /></p>
-              <input className="upload"
+              <p>Upload audio</p>
+
+              <input 
+                className="custom-file-input"
                 type="file"
                 name="file"
-                id="file"
+                id="m"
                 onChange={this.handleFile}
               />
-              <p>Upload audio</p>
-            </div>
           </label>
+
+            <div className='preview-container'>
+              {preview}
+
+            </div>
+
+
+          </div>
+
           <textarea className="content-tag"
             type="text"
-            value={this.state.content}
+            value={this.state.text}
             onChange={this.update("text")}
             placeholder="Add a caption, if you like"
           />

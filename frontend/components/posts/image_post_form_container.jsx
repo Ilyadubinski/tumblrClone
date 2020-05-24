@@ -76,7 +76,7 @@ class ImagePostForm extends React.Component {
 
   
   render() {
-    console.log(this.state)
+    // console.log(this.state)
 
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} width="100%" height="20%" /> : null;
 
@@ -101,31 +101,7 @@ class ImagePostForm extends React.Component {
               onChange={this.handleFile}
             /> */}
           
-            <div className="upload-file">
-              
-              
-            <label htmlFor="m">
-              <p> <FontAwesomeIcon icon={faCameraRetro} className='camera-icon' /></p>
-              <p>Upload a photo</p>
-           
-              <input 
-              type="file"
-               id='m'
-                onChange={this.handleFile} 
-                  className="custom-file-input"
-                />
-            </label>
-            
-              <div className='preview-container'>
-            {preview}
-
-              </div>
-     
-          
-        
-              
-
-            </div>
+             
          
           <textarea className="content-tag"
             type="text"

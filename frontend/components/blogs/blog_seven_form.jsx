@@ -51,7 +51,7 @@ class BlogSevenForm extends React.Component {
                     <div className='blog-list'>
                         {/* this.props.posts is undefined....this form does not have access to posts */}
                        
-                        <li className='li-post' style={{ "listStyle": "none" }}>Posts </li> 
+                        <li className='li-post' style={{ "listStyle": "none" }}>All Posts </li> 
                         {this.props.posts.map(post => 
                             <ul style={{"listStyle":"none"}}>
 

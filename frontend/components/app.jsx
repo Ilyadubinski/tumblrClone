@@ -14,6 +14,8 @@ import {
 import postIndexContainer from "./posts/post_index_container";
 import Modal from './modal/modal';
 import ModalTwo from './modal/ModalTwo';
+// import PostIndexSearchItem from '../components/posts/post_index_search_item';
+import PostIndexSearchItemContainer from '../components/posts/post_index_item_search_container'
 
 
 const App = () => (
@@ -22,10 +24,11 @@ const App = () => (
     {/* <ModalTwo /> */}
     {/* <header className="logo-position">
     <Link to="/" >
-        <p className="logo">Wander</p>
-      </Link> */}
+    <p className="logo">Wander</p>
+  </Link> */}
     {/* </header> */}
     <Switch>
+  <Route path="/posts/:postId" component={PostIndexSearchItemContainer} />
       {/* <Route exact path="/new/text" component={NewPost} /> */}
       {/* <Route exact path="/posts/:post_id/edit" component={EditPost} /> */}
       <AuthRoute exact path="/login" component={LogInFormContainer} />

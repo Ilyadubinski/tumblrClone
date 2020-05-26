@@ -83,38 +83,53 @@ class ImagePostForm extends React.Component {
     return (
       // <div className='text-post-form'>
       <form onSubmit={this.handleSubmit} className="new-post-container">
-      <div className="new-post-title">
-        <input
-          className="title-input"
-          type="text"
-          placeholder="Title"
-          size="60"
-          value={this.state.title}
-          onChange={this.update("title")}
-        />
-      </div>
-      <div>
-            {/* <input className="upload"
+        <div className="new-post-title">
+          <input
+            className="title-input"
+            type="text"
+            placeholder="Title"
+            size="60"
+            value={this.state.title}
+            onChange={this.update("title")}
+          />
+        </div>
+        <div className="upload-file">
+          <label htmlFor="m">
+            <p>
+              {" "}
+              <FontAwesomeIcon icon={faCameraRetro} className="camera-icon" />
+            </p>
+            <p>Upload audio</p>
+
+            <input
+              className="custom-file-input"
               type="file"
               name="file"
-              id="file"
+              id="m"
               onChange={this.handleFile}
-            /> */}
-          
-             
-         
-          <textarea className="content-tag"
-            type="text"
-            value={this.state.text}
-            onChange={this.update("text")}
-            placeholder="Add a caption, if you like"
-          />
-          <div className="post-form-footer">
-            <button onClick={this.props.closeModal} className="close-modal">Close</button>
-            <input className="submit-post" type="submit" value={this.props.post_type} />
-          </div>
+            />
+          </label>
 
-      </div>
+          <div className="preview-container">{preview}</div>
+        </div>
+
+        <textarea
+          className="content-tag"
+          type="text"
+          value={this.state.text}
+          onChange={this.update("text")}
+          placeholder="Add a caption, if you like"
+        />
+        <div className="post-form-footer">
+          <button onClick={this.props.closeModal} className="close-modal">
+            Close
+          </button>
+          <input
+            className="submit-post"
+            type="submit"
+            value={this.props.post_type}
+          />
+        </div>
       </form>
     );
   }

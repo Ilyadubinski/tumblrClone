@@ -137,6 +137,7 @@ class PostIndexItem extends React.Component {
 
 
         let imgTag; 
+        // debugger
         if (this.props.post.photoUrl) {
           imgTag = <div><img src={this.props.post.photoUrl} width="100%" /></div>
         } 

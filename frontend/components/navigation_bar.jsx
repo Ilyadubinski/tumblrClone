@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faGithub, faSearch,faLinkedin, faAngellist, 
 } from "@fortawesome/free-brands-svg-icons";
-
+import SearchContainer from "../components/search/search_container";
 
 
 class NavigationBar extends React.Component {
@@ -42,22 +42,23 @@ class NavigationBar extends React.Component {
             <div className="navigation-bar-flexbox">
                 <a className="wander-icon" href="#/">W</a>
                 <div className="search-bar">
-                    <form className="search-box">
-                        <FontAwesomeIcon icon={faSearch} className='search-icon'/>
-                        <input id="search"
+                    {/* <form className="search-box"> */}
+                        {/* <FontAwesomeIcon icon={faSearch} className='search-icon'/> */}
+                            <SearchContainer />
+                        {/* <input id="search"
                             className="search-input"
                             type="text"
                             placeholder="Search Wander"
                             title="Search posts and tags...try searching &quot;hello world&quot;">
                             
-                        </input>
-                        <input
+                        </input> */}
+                        {/* <input
                             // onClick={search(document.getElementById('search').value)}
                             type="submit"
                             className="hidden"
                             value="submit">
-                        </input>
-                    </form>
+                        </input> */}
+                    {/* </form> */}
                 </div>
                 <ul className="devlinks">
                     <li>

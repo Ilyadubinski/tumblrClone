@@ -36,7 +36,7 @@ interactive and intuitive ways to create and share anything(literally anything)
 ways to explore and expierence other individuals or communities
 the ability to modify and curate their own pages
 
-![Alt text](app/assets/images/dash.png "Optional Title")
+![Alt text](app/assets/images/dash1.png "Optional Title")
 
 The crowning jewel of Wander is its 'post-index' page. This page can be thought of as a feed or dashboard. Once logged, either uniquely or through the built in 'guest login' functionality, the user live post. This was achieved chiefly through the post-index container where a modal and a series of actions built elsewhere were strategically fed into the 'post-index-item' page. This is a specific rendering page built to handle live posting. 
 

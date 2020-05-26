@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 12px;
+    // padding: 10px 12px;
     z-index: 1000;
     border-bottom: 1px solid;
     color: whitesmoke;
@@ -79,6 +79,7 @@ button, input, select, textarea {
 .devlinks {
     margin-right: 50px;
     margin-left: 50px;
+    white-space:nowrap;
 }
 .navigation-bar-flexbox li {
     display: inline-block;

@@ -54,9 +54,28 @@ const mdp = (dispatch) => ({
     logout: () => dispatch(logout())
 });
 ```
+Wander empowers its users with:
 
-It was a purposeful design choice to limit restrictions on posting
+Image posting. 
 
+![Alt text](app/assets/images/image-post.png "Optional Title")
+
+
+User homepage. 
+
+![Alt text](app/assets/images/user-home.png "Optional Title")
+
+Animated and fully functional search bar. 
+
+![Alt text](app/assets/images/search-bar.png "Optional Title")
+
+Individual post page. 
+
+![Alt text](app/assets/images/post-page.png "Optional Title")
+
+Like, reblog, and delete functionality on each post 
+
+![Alt text](app/assets/images/like-reblog-delete.png "Optional Title")
 Methods to create posts including animations were added to facilitate user experience
 
 
@@ -70,15 +89,13 @@ Front-End: React/Redux
 
 Back-End: Rails/PostgresSQL
 
-Media Content is stored locally
+Cloud Storage: AWS S3
+
+
 
 ---
 **Todos**
 
-implement the 'like','follow', and 'tag' functionality that has already been built out in the backend
+implement 'follow' functionality that has already been built out in the backend
 
-Create and implement a reply feature that allows users to leave replies on each others dreams
-
-Create individual pages that the user can branche out to 
-
-Implement AWS S3 to store media content
+Create and implement a comment feature 
